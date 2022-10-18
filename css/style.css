@@ -1,0 +1,153 @@
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto), url(../fonts/Roboto-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto), url(../fonts/Roboto-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto), url(../fonts/Roboto-Light.ttf);
+    font-weight: 300;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.parte-superior-cabecalho {
+    height: 25px;
+    background-color: #000000;
+    color: #fff;
+}
+
+.parte-superior-cabecalho a:first-child {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    margin-top: 2rem;
+}
+
+.area-administrativa {
+    border: 1px solid #D7D0D0;
+    padding: 2rem 4rem;
+}
+
+.area-administrativa h2 {
+    margin-bottom: 3rem;
+    margin-top: -20px;
+    font-size: 1.7rem;
+}
+
+.area-administrativa h3 {
+    font-size: 1rem;
+    color: #8B8585;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    padding-top: 0.5rem;
+}
+
+.logo h1 {
+    font-weight: 200;
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 0.2rem;
+}
+
+.area-administrativa .parte-inferior-formulario {
+    margin-top: 2rem;
+    justify-content: end;
+    gap: 0.6rem;
+    display: flex;
+
+}
+
+.botao {
+    border-radius: 4px !important;
+}
+
+#botaoLimpar:hover,
+#botaoLimpar:focus {
+    background-color: transparent;
+    color: #0d6efd;
+}
+
+#alerta-senha {
+    display: none;
+}
+
+.mostrar-alerta {
+    display: flex !important;
+}
+.habilitarDaltonismo {
+    /* background-color: #A74F8B !important; */
+    /* filter: invert(100%); */
+    filter: grayscale(100%);
+}
+
+#togglePassword{
+    cursor: pointer;
+    font-size: 14px;
+    color: #000000;
+}
+/*FOOTER*/
+#rodape {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    background-color: #5776B0;
+    width: 100%;
+    margin-top: 2rem;
+    bottom: 0;
+    padding: 0 6rem;
+    z-index: 3000;
+
+}
+
+#rodape>h2 {
+    margin-right: 0;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 0.9rem;
+    text-align: center;
+}
+
+#rodape>h1 {
+    color: #fff;
+    margin-top: 0.6rem;
+    font-weight: 600;
+    font-size: 15px;
+}
