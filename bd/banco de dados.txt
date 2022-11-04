@@ -1,0 +1,66 @@
+CREATE TABLE instituicao (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	instituicao text(50) NOT NULL
+);
+CREATE TABLE unidade (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	unidade text(50) NOT NULL
+);
+CREATE TABLE gestao (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	data_inicial DATE NOT NULL,
+	data_final DATE NOT NULL
+);
+
+CREATE TABLE tipo_cargo (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	cargo text(50) NOT NULL
+);
+CREATE TABLE tipo_legislacao (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	legislacao text(50) NOT NULL
+);
+CREATE TABLE magistrado (
+	matricula varchar(10) NOT NULL PRIMARY KEY,
+	nome_autoridade text(50) NOT NULL,
+  	ordem_antiguidade int not NULL,
+	situacao text(20),
+	genero text(20)
+);
+CREATE TABLE gestao_composicao_unidade (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_gestao int,
+  	id_unidade int,
+  	matricula varchar(10),
+  	id_cargo int,
+  	FOREIGN KEY (id_gestao) REFERENCES gestao(id),
+  	FOREIGN KEY (id_unidade) REFERENCES unidade(id),
+  	FOREIGN KEY (matricula) REFERENCES magistrado(matricula),
+  	FOREIGN KEY (id_cargo) REFERENCES tipo_cargo(id)
+);
+CREATE TABLE legislacao (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_instituicao int,
+  	id_gestao int,
+  	id_tipo_legislacao int,
+  	numero_legislacao varchar(10),
+  	data_legislacao date,
+  	url_legislacao text,
+  	FOREIGN KEY (id_gestao) REFERENCES gestao(id),
+  	FOREIGN KEY (id_instituicao) REFERENCES instituicao(id),
+  	FOREIGN KEY (id_tipo_legislacao) REFERENCES tipo_legislacao(id)
+ 
+);
+
+
+//Povoando as tabelas
+
+INSERT INTO unidade (unidade)
+VALUES ("Comissão"), ("Seção"), ("Turma"), ("Estrutura Principal");
+
+INSERT INTO instituicao (instituicao) VALUES ("TRF5"), ("SJAL"), ("SJCE"), ("SJPB"), ("SJPE"), ("SJRN"), ("SJSE");
+
+INSERT INTO tipo_legislacao (legislacao) VALUES ("Portaria"), ("Resolução"), ("Ato"), ("Instrução Normativa"), ("Provimentos"), ("Emendas Regimentais"), ("Súmulas");
+
+INSERT INTO tipo_cargo (cargo) VALUES ("Presidente"), ("Vice-Presidente"), ("Corregedor Regional"),
+("Diretor do Gabinete da Revista"), ("Diretor da Escola de Magistratura Federal da 5ª Região (ESMAFE)"), ("Vice-Diretor da Escola de Magistratura Federal da 5ª Região (ESMAFE)"), ("Coordenadoria dos Juizados Especiais Federais (JEFs)"), ("Vice-Diretor da Escola de Magistratura Federal da 5ª Região (ESMAFE)"), ("Coordenadoria dos Juizados Especiais Federais (JEFs)"), ("Coordenador do Gabinete de Conciliação)"), ("Presidente de turma"), ("Presidente de seção"), ("Sem cargo específico");
