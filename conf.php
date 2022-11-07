@@ -5,11 +5,11 @@ class Configuracao {
 	const nome_portal = "Organograma";
 
 	// # Configurações de banco de dados postgres
-	// const db_host = "127.0.0.1";
+	const db_host = "127.0.0.1";
 	// const db_porta = 5432;
-	// const db_banco = "reservas";
-	// const db_usuario = "reservas";
-	// const db_senha = "reservas";
+	const db_banco = "organograma_atualizado";
+	const db_usuario = "root";
+	const db_senha = "";
 
 	const db_mensagem_indisponibilidade = "Sistema temporariamente indisponível. Tente novamente em alguns minutos.";
 
