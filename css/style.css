@@ -35,8 +35,10 @@ body {
 }
 
 header {
-
-    height: 100px;
+    margin-left: 15%;
+    width: 85%;
+    height: 110px;
+    padding-right: 0;
     background-color: #fff;
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
@@ -75,10 +77,16 @@ main {
 .logo {
     display: flex;
     align-items: center;
-    gap: 1.8rem;
-    padding-top: 0.5rem;
+    gap: 40rem;
+    padding: 0.5rem 1rem 0 1rem;
 }
-
+#pesquisa-header #pesquisa{
+    width: 500px;
+}
+#pesquisa-header{
+    display: flex;
+    
+} 
 .logo h1 {
     font-weight: 200;
     font-size: 2rem;
@@ -86,12 +94,36 @@ main {
     margin-top: 0.2rem;
 }
 
-.area-administrativa .parte-inferior-formulario {
+.parte-inferior-formulario {
     margin-top: 2rem;
     justify-content: end;
     gap: 0.6rem;
     display: flex;
 
+}
+.titulo-principal{
+    margin-top: 5.5rem;
+}
+.formulario{
+    margin-top: 1rem;
+}
+.breadcrumb{
+    margin-top: 0.2rem;
+}
+.breadcrumb >.breadcrumb-pagina{
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+   
+    padding: 0;
+    margin: 0;
+}
+
+.item-breadcrumb{
+    color: #5f5f5f;
+}
+.active, .cargo{
+    font-weight: bold;
 }
 
 .botao {
@@ -122,6 +154,54 @@ main {
     font-size: 14px;
     color: #000000;
 }
+/*SIDEBAR*/
+#sidebar{
+    padding: 1.5rem 1rem;
+    width: 15%;
+    background-color: #f9f7f7;
+    position: fixed;
+    z-index: 4000;
+    top: 0;
+    height: 92.8%;
+}
+.conteudo-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.conteudo-sidebar img{
+    width: 8.2em;
+    
+}
+.links-sidebar{
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-top: 3rem;
+}
+.links-sidebar > li > a{
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.05rem;
+    align-items: center;
+}
+.cabecalho-tabela{
+    border-bottom: 2px solid #000;
+}
+.cabecalho-tabela > th:first-child{
+    width: 10px;
+}
+   
+.conteudo-sidebar div{
+    width: 100%;
+    padding: 0 1.4rem;
+}
 /*FOOTER*/
 #rodape {
     display: flex;
@@ -130,7 +210,8 @@ main {
     align-items: center;
     background-color: #5776B0;
     width: 100%;
-    margin-top: 2rem;
+    position: absolute;
+    /* top: 42.94em; */
     bottom: 0;
     padding: 0 6rem;
     z-index: 3000;
