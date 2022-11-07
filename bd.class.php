@@ -1,14 +1,15 @@
 <?php
+require_once("./conf.php");
 
-função OpenCon ( ) {
+function OpenCon() {
 
-    $conn = new mysqli (Configuracao::db_host , Configuracao::db_usuario , Configuracao::db_senha , Configuracao::db_banco ) ou die (Configuracao::db_mensagem_indisponibilidade."". $conn - > error ) ;      
+    $conn = new mysqli (Configuracao::db_host , Configuracao::db_usuario , Configuracao::db_senha , Configuracao::db_banco ) or die (Configuracao::db_mensagem_indisponibilidade."". $conn -> error ) ;      
     
-    return $con ; 
+    return $conn ; 
 }
  
-função CloseCon ( $conn ){
-    $conn - > fechar ( ) ;  
+function CloseCon ( $conn ){
+    $conn -> close() ;  
 }
 
 // class ConexaoBanco {
@@ -35,4 +36,3 @@ função CloseCon ( $conn ){
 // 		pg_close($this->conn);
 // 	}
 	
-} 
