@@ -15,10 +15,25 @@
     src: local(Roboto), url(../fonts/Roboto-Light.ttf);
     font-weight: 300;
 }
+@font-face {
+    font-family: "Manrope";
+    src: local(Manrope), url(../fonts/Manrope-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Manrope";
+    src: local(Manrope), url(../fonts/Manrope-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Manrope";
+    src: local(Manrope), url(../fonts/Manrope-Light.ttf);
+    font-weight: 300;
+}
 
 * {
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
 }
 
 a {
@@ -27,18 +42,22 @@ a {
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 body {
     padding: 0;
     margin: 0;
+    z-index: -2;
 }
-
-header {
+.header-interno{
     margin-left: 15%;
     width: 85%;
+}
+header {
+    font-family: "Roboto", sans-serif;
     height: 110px;
-    padding-right: 0;
+    /* padding-right: 0; */
     background-color: #fff;
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
@@ -53,9 +72,28 @@ header {
     color: #fff;
     text-decoration: none;
 }
-
-main {
+.fixed {
+	display: block !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 40;
+	background-color: #fff;
+}
+.fixed_rodape {
+	display: block !important;
+	position: fixed;
+	bottom: 0;
+	right: 8vw;
+	
+}
+#Inicio_Conteudo {
+    font-family: "Roboto", sans-serif;
     margin-top: 2rem;
+    height: 100%;
+    position: relative;
+    margin-bottom: 4rem;
 }
 
 .area-administrativa {
@@ -73,13 +111,30 @@ main {
     font-size: 1rem;
     color: #8B8585;
 }
-
-.logo {
+/* 17a2b8 */
+.logo{
     display: flex;
     align-items: center;
-    gap: 40rem;
     padding: 0.5rem 1rem 0 1rem;
 }
+.index{
+    gap: 2rem;
+}
+.header-interno .logo {
+    
+    gap: 40rem;
+   
+}
+@media (min-width: 1164.98px) {
+	#pesquisa-header #pesquisa{
+        width: 400px;
+        font-size: 0.9rem;
+    }
+    main{
+        width: 80%;
+    }
+}
+
 #pesquisa-header #pesquisa{
     width: 500px;
 }
@@ -101,8 +156,19 @@ main {
     display: flex;
 
 }
+.titulo-botao{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    align-items: center;
+}
 .titulo-principal{
-    margin-top: 5.5rem;
+    margin-top: 2rem;
+
+}
+.botao-listar{
+    
+    margin-top: 2rem;
 }
 .formulario{
     margin-top: 1rem;
@@ -156,13 +222,17 @@ main {
 }
 /*SIDEBAR*/
 #sidebar{
-    padding: 1.5rem 1rem;
+    font-family: "Manrope", sans-serif;
+    padding: 1.5rem 0.8rem;
     width: 15%;
     background-color: #f9f7f7;
     position: fixed;
-    z-index: 4000;
+    z-index: 1;
     top: 0;
-    height: 92.8%;
+    height: 100%;
+    /* height: calc(100% - 70px); */
+   
+    
 }
 .conteudo-sidebar{
     display: flex;
@@ -176,20 +246,50 @@ main {
     
 }
 .links-sidebar{
-    padding-left: 2rem;
+    
+    /* padding-left: 2rem; */
+    padding-right: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
     margin-top: 3rem;
 }
+.links-sidebar > li {
+   
+    margin-bottom: 0.8rem;
+}
 .links-sidebar > li > a{
+  
+    justify-content: space-between;
     text-decoration: none;
     color: #000;
     display: flex;
     gap: 1rem;
-    font-size: 1.05rem;
     align-items: center;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.links-sidebar .link-active{
+    background-color: #333333;
+    width: calc(100% + 4.5em);
+    margin-left: -3.5rem;
+    padding: 0.5rem 0;
+    border-radius: 0 2rem 2rem 0;
+    transition: .1s ease;
+    
+}
+
+.links-sidebar .link-active a{
+    color: #fff;
+    margin-left: 3.5rem;
+    transition: ease;
+}
+.links-sidebar .link-active i{
+    color: #fff;
+    margin-right: 1rem;
+  
 }
 .cabecalho-tabela{
     border-bottom: 2px solid #000;
@@ -197,10 +297,48 @@ main {
 .cabecalho-tabela > th:first-child{
     width: 10px;
 }
-   
-.conteudo-sidebar div{
+.cabecalho-tabela th:last-child{
+    text-align: center;
+}
+.principal{
+    height: 100vh!important;
+}
+.icone-sidebar{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+.icone-chevron{
+    font-size: 0.8rem;
+    color: #494949;
+}
+.conteudo-sidebar div:not(.icone-sidebar) {
     width: 100%;
-    padding: 0 1.4rem;
+    padding: 0 0.7rem;
+    align-items: center;
+}
+table tbody td:last-child{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    justify-content: center;
+}
+table thead tr .ordenar{
+    display: flex;
+    flex-direction: row;
+    border: 0;
+    gap: 0.5rem;
+}
+table thead tr .ordenar div i{
+    cursor: pointer;
+}
+
+
+.icone-tabela{
+    text-decoration: none;
+}
+.icone-tabela > i{
+    color: #000;
 }
 /*FOOTER*/
 #rodape {
@@ -210,11 +348,12 @@ main {
     align-items: center;
     background-color: #5776B0;
     width: 100%;
-    position: absolute;
+    z-index:  2;
+    /* position: absolute; */
     /* top: 42.94em; */
     bottom: 0;
     padding: 0 6rem;
-    z-index: 3000;
+    
 
 }
 
@@ -231,4 +370,33 @@ main {
     margin-top: 0.6rem;
     font-weight: 600;
     font-size: 15px;
+}
+#sigla{
+    width: 20%;
+}
+
+@media (max-width:1400px){
+    .links-sidebar > li > a{
+        font-size: 1.05rem;
+    }
+}
+@media (max-width: 1024px){
+    .links-sidebar > li > a{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 1164.98px) {
+	#pesquisa-header #pesquisa{
+        width: 400px;
+        font-size: 0.9rem;
+    }
+    main{
+        width: 80%;
+    }
+}
+.alinhado-direita{
+     margin-top: 2rem;
+    justify-content: end;
+    gap: 0.6rem;
+    display: flex;
 }
